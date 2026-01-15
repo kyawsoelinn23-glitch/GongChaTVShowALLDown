@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="40dp"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/gong_cha_logo" />
+
+    <Spinner
+        android:id="@+id/spinnerVideos"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="@id/logoImage"
+        app:layout_constraintStart_toStartOf="@id/logoImage"
+        app:layout_constraintTop_toBottomOf="@id/logoImage" />
+
+    <Button
+        android:id="@+id/btnDownload"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="Download Selected"
+        app:layout_constraintEnd_toEndOf="@id/spinnerVideos"
+        app:layout_constraintStart_toStartOf="@id/spinnerVideos"
+        app:layout_constraintTop_toBottomOf="@id/spinnerVideos" />
+
+    <Button
+        android:id="@+id/btnDownloadAll"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:text="Download All Videos"
+        app:layout_constraintEnd_toEndOf="@id/btnDownload"
+        app:layout_constraintStart_toStartOf="@id/btnDownload"
+        app:layout_constraintTop_toBottomOf="@id/btnDownload" />
+
+    <Button
+        android:id="@+id/btnPlay"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="Play Selected"
+        app:layout_constraintEnd_toEndOf="@id/btnDownloadAll"
+        app:layout_constraintStart_toStartOf="@id/btnDownloadAll"
+        app:layout_constraintTop_toBottomOf="@id/btnDownloadAll" />
+
+    <Button
+        android:id="@+id/btnRefresh"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:text="Refresh List"
+        app:layout_constraintEnd_toEndOf="@id/btnPlay"
+        app:layout_constraintStart_toStartOf="@id/btnPlay"
+        app:layout_constraintTop_toBottomOf="@id/btnPlay" />
+
+    <androidx.media3.ui.PlayerView
+        android:id="@+id/playerView"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="16dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnRefresh"
+        app:resize_mode="fit"
+        app:use_controller="true"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
